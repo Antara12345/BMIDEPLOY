@@ -28,7 +28,7 @@ app.post("/signup", async (req, res) => {
     else {
         bcrypt.hash(password, 4, async function(err, hash) {
         if(err){
-            res.send("Something went wrong, please try again later")
+            res.send({"msg":"Something went wrong, please try again later"})
         }
         const new_user = new UserModel({
             name,
